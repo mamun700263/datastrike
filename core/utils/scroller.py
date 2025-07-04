@@ -13,7 +13,7 @@ class Scroller:
         return driver.execute_script("return document.body.scrollHeight")
 
     @staticmethod
-    def scroll_and_wait(driver, wait_time=2, scroll_pause=0.5, max_scrolls=10):
+    def scroll_and_wait(driver, wait_time=2, scroll_pause=1.5, max_scrolls=10):
         last_height = Scroller.get_scroll_height(driver)
 
         for i in range(max_scrolls):

@@ -12,8 +12,7 @@ class FileSaver:
     VALID_EXTENSIONS = {
         ".csv": "csv",
         ".json": "json",
-        ".xlsx": "xlsx",
-        # ".sqlite": "sqlite",
+        ".xlsx": "excel",
         ".sqlite": "db",
     }
 
@@ -29,7 +28,6 @@ class FileSaver:
 
     @staticmethod
     def save(items: list[dict[str: str]], file_name: Optional[str], table_name:Optional[str] ="products", mode: str = 'overwrite'):
-
         if not items:
             logger.warning("⚠️ No items to save.")
             return
@@ -40,17 +38,20 @@ class FileSaver:
 
     @staticmethod
     def _save_to_file(file_name: str, items: list[dict[str: str]], table_name: str, mode: str):
-        ext = os.path.splitext(file_name)[1][1:].lower()
+        # ext = os.path.splitext(file_name)[1][1:].lower()
+        ext = FileSaver.check_format(file_name)
         if mode=='overwrite': mode= 'save'
         method_name = f"_{mode}_{ext}"
+        logger.info(method_name)
         method = getattr(FileSaver, method_name, None)
+
         if callable(method):
             if ext == "sqlite":
                 method(file_name, items, table_name)
             else:
                 method(file_name, items)
         else:
-            logger.error(f"❌ Unsupported file format or mode: {ext}, {mode}")
+            logger.error(f"❌ Unsupported  mode:  {mode} {method_name}")
 
     @staticmethod
     def _save_csv(file_name, items: pd.DataFrame):

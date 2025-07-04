@@ -1,2 +1,2 @@
 from .amazong_scraper import AmazonScraper
-from .amazon_product_extractors import ProductExtractor
+from .product_extractor import ProductExtractor

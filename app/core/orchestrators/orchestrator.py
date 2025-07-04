@@ -1,8 +1,8 @@
 from typing import Type, Optional, Dict, Any, List
-from app.scrapers.base_scraper import BaseScraper
-from app.dataExporters.api_post import post_data_to_api
-from app.dataExporters.file_saver import save_to_file
-from app.dataExporters.google_sheet_pusher import push_to_google_sheet
+from scrapers.base_scraper import BaseScraper
+from dataExporters.api_post import post_data_to_api
+from dataExporters.file_saver import save_to_file
+from dataExporters.google_sheet_pusher import push_to_google_sheet
 
 
 class Orchestrator:

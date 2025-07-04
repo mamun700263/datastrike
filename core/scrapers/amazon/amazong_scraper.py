@@ -8,7 +8,7 @@ from core.utils.soup_utils import SoupUtils
 from core.utils.scroller import Scroller
 from core.utils.pagination import Pagination
 from core.utils.humanizer import Humanizer
-from amazon import ProductExtractor
+from .product_extractor import ProductExtractor
 
 
 class AmazonScraper:
@@ -50,7 +50,6 @@ class AmazonScraper:
             self.logger.info(f"📄 Page {page + 1} scraped.")
 
             next_page_url = Pagination.get_next_url(soup,self.url)
-            # next_page_url = next_page_url[:-1]+(next_page_url[-1]+1)
             if not next_page_url:
                 break
 

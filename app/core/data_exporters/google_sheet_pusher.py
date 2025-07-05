@@ -7,7 +7,7 @@ from gspread_dataframe import set_with_dataframe, get_as_dataframe
 from oauth2client.service_account import ServiceAccountCredentials
 
 from dotenv import load_dotenv
-from core import Logger
+from app.core import Logger
 
 # Load environment variables
 load_dotenv()

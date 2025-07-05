@@ -1,9 +1,10 @@
 from typing import Type, Optional, Dict, Any, List
-from core.scrapers.base_scraper import BaseScraper
+from ..scrapers import BaseScraper
 # from core.dataExporters.api_post import post_data_to_api
 # from core.dataExporters.file_saver import save_to_file
 # from core.dataExporters.google_sheet_pusher import push_to_google_sheet
-from core.utils import ScraperConfig
+from app.core.utils import ScraperConfig
+
 
 class BaseOrchestrator:
     def __init__(

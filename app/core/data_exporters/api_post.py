@@ -2,7 +2,7 @@ import time
 import requests
 from requests.exceptions import Timeout, ConnectionError, RequestException
 
-from core import Logger
+from app.core import Logger
 logger = Logger.get_logger(__name__,'Data Exporters')
 
 class ApiPoster:

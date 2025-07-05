@@ -1,7 +1,7 @@
 from typing import  Optional
 from bs4 import BeautifulSoup, FeatureNotFound
 
-from core import Logger
+from ...core import Logger
 logger = Logger.get_logger(__name__,'Utils')
 
 

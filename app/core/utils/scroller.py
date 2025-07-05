@@ -1,9 +1,9 @@
 import time
 
-from core.utils  import Humanizer
+from ..utils  import Humanizer
 from selenium.common.exceptions import WebDriverException, TimeoutException
 
-from core import Logger
+from ...core import Logger
 logger = Logger.get_logger(__name__,'Utils')
 
 

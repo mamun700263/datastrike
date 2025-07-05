@@ -1,6 +1,6 @@
 import time, random
 
-from core import Logger
+from ...core import Logger
 logger = Logger.get_logger(__name__,'Utils')
 
 class Humanizer:

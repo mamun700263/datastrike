@@ -4,7 +4,7 @@ from typing import Optional, List, Dict
 
 from pathlib import Path
 
-from core import Logger
+from app.core import Logger
 logger = Logger.get_logger(__name__,'Data Exporters')
 
 class FileSaver:

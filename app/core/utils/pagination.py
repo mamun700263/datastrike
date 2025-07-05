@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 from typing import Optional
 
-from core import Logger
+from ...core import Logger
 logger = Logger.get_logger(__name__,'Utils')
 
 class Pagination:

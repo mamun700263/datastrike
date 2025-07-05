@@ -3,11 +3,11 @@ from typing import List, Dict
 from urllib.parse import quote_plus
 
 from ...logger import Logger
-from core.utils.selenium_config import ScraperConfig
-from core.utils.soup_utils import SoupUtils
-from core.utils.scroller import Scroller
-from core.utils.pagination import Pagination
-from core.utils.humanizer import Humanizer
+from app.core.utils import ScraperConfig
+from app.core.utils import SoupUtils
+from app.core.utils import Scroller
+from app.core.utils import Pagination
+from app.core.utils import Humanizer
 from .product_extractor import ProductExtractor
 
 

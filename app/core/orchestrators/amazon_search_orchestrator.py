@@ -1,12 +1,12 @@
 from . import BaseOrchestrator
 from app.core.scrapers.amazon.amazon_scraper import AmazonScraper
-from core.utils import ScraperConfig
-from core.logger import Logger
+from app.core.utils import ScraperConfig
+from app.core.logger import Logger
 
 class AmazonSearchOrchestrator(BaseOrchestrator):
-    def __init__(self, keyword: str, page: int = 1, exporter: str = "file", export_config: dict = None):
-        config = ScraperConfig()
-        self.logger = Logger.get_logger("amazon", "orchestrator")
+    def __init__(self, keyword: str, page: int = 1, exporter: str = "file", export_config: dict = None, use_uc: bool = False):
+        config = ScraperConfig(use_uc=use_uc)
+        self.logger = Logger.get_logger(__name__, "amazon")
         self.keyword = keyword
         self.page = page
         scraper = AmazonScraper(config=config, logger=self.logger)

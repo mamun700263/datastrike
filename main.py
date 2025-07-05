@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers.amazon import search as amazon_search_router
+from app.routers.amazon import search as amazon_search_router
 
 app = FastAPI()
 

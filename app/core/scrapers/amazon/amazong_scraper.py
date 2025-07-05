@@ -3,7 +3,7 @@ from typing import List, Dict
 from urllib.parse import quote_plus
 
 from ...logger import Logger
-from core.utils.selenium_utils import ScraperConfig
+from core.utils.selenium_config import ScraperConfig
 from core.utils.soup_utils import SoupUtils
 from core.utils.scroller import Scroller
 from core.utils.pagination import Pagination
@@ -36,7 +36,7 @@ class AmazonScraper:
             self.logger.error(f"❌ Error loading page for keyword '{keyword}': {e}")
             return ""
 
-    def scrape_all_pages(self, keyword: str, max_pages=5)-> List[Dict[str, str]]:
+    def search(self, keyword: str, max_pages=5)-> List[Dict[str, str]]:
         results = []
         response = self._scrape_search_results(keyword)
         soup = SoupUtils.make_soup(response)

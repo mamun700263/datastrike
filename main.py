@@ -1,23 +1,6 @@
-from app.scrapers.amazon_scraper import AmazonScraper
-from app.orchestrator import Orchestrator
+from fastapi import FastAPI
+from app.routers.amazon import search as amazon_search_router
 
-config = {
-    "url": "https://www.amazon.com/s?k=laptop",
-    "headers": {"User-Agent": "TAV_DEV_Sniper/1.0"},
-}
+app = FastAPI()
 
-export_config = {
-    "filename": "amazon_laptops.json",
-    "format": "json"
-}
-
-orchestrator = Orchestrator(
-    scraper_class=AmazonScraper,
-    config=config,
-    exporter="file",  # or "api" / "google"
-    export_config=export_config
-)
-
-orchestrator.run()
-
-
+app.include_router(amazon_search_router.router)

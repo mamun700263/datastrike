@@ -1,5 +1,5 @@
 from . import BaseOrchestrator
-from core.scrapers.amazon.amazong_scraper import AmazonScraper
+from app.core.scrapers.amazon.amazon_scraper import AmazonScraper
 from core.utils import ScraperConfig
 from core.logger import Logger
 

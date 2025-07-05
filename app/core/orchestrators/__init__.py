@@ -1,2 +1,2 @@
-from .orchestrator import BaseOrchestrator
+from .base_orchestrator import BaseOrchestrator
 from .amazon_search_orchestrator import AmazonSearchOrchestrator

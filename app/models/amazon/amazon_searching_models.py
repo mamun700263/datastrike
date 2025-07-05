@@ -1,11 +1,15 @@
-from typing import List
-from pydantic import BaseModel, Field
+from typing import List, Optional
+from pydantic import BaseModel, Field, HttpUrl
+
 
 class AmazonSearchResult(BaseModel):
     id: int
-    name:str = Field(..., min_length=3)
-    url:url 
-    image_url : url
-    description: str = Field(..., min_length=1)
-    rating:float
-    rated_by : int
+    name: str
+    url: HttpUrl
+    image_url: HttpUrl
+    description: Optional[str] = None
+    rating: Optional[float] = Field(None, ge=0, le=5)
+    rated_by: Optional[int] = Field(0, ge=0)
+
+    class Config:
+        orm_mode = True

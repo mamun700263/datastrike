@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from api.v1 import views
+from routers.amazon import search as amazon_search_router
 
 app = FastAPI()
 
-app.include_router(views.router, prefix="/api/v1/tasks", tags=["tasks"])
+app.include_router(amazon_search_router.router)
